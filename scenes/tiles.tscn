@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8uxok8ber6bw"]
+
+[ext_resource type="PackedScene" uid="uid://cq5o5s2pb7s6r" path="res://assets/water.gltf" id="1_1g8qg"]
+
+[node name="tiles" type="Node3D"]
+
+[node name="water" parent="." instance=ExtResource("1_1g8qg")]

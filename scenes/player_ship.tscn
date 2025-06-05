@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bghrn83q381rq"]
+
+[ext_resource type="Script" uid="uid://dxyfciyarcu1b" path="res://scripts/player_ship.gd" id="1_wbtlb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbmm3"]
+
+[node name="player_ship" type="CharacterBody3D"]
+script = ExtResource("1_wbtlb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gbmm3")
+
+[node name="H" type="Node3D" parent="."]
+
+[node name="V" type="Node3D" parent="H"]
+
+[node name="Camera" type="Camera3D" parent="H/V"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.97582)
