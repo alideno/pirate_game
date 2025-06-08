@@ -15,4 +15,4 @@ mesh = SubResource("BoxMesh_gbmm3")
 [node name="V" type="Node3D" parent="H"]
 
 [node name="Camera" type="Camera3D" parent="H/V"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.97582)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.42206)

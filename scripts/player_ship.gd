@@ -3,7 +3,7 @@ extends CharacterBody3D
 var mouse_movement = Vector2()
 @onready var camera = $H/V/Camera
 
-const TILE_SIZE = Vector3(1, 1, 1)  
+const TILE_SIZE = Vector3(3,3,3)  
 
 func _ready() -> void:
 	$H/V.rotation_degrees.x = -15
@@ -28,18 +28,18 @@ func handle_click(event: InputEventMouseButton) -> void:
 	var space_state = get_world_3d().direct_space_state
 	var ray_params = PhysicsRayQueryParameters3D.create(from, to)
 	var result = space_state.intersect_ray(ray_params)
-
-	print(result)
+	
 	if result:
 		var hit_pos = result.position
 		var grid = Vector3i(
-			floor(hit_pos.x / TILE_SIZE.x + 0.5),
-			floor(hit_pos.y / TILE_SIZE.y + 0.5),
-			floor(hit_pos.z / TILE_SIZE.z + 0.5)
+			floor(hit_pos.x / TILE_SIZE.x),
+			floor(hit_pos.y / TILE_SIZE.y),
+			floor(hit_pos.z / TILE_SIZE.z)
 		)
-		var center = grid * TILE_SIZE + Vector3(0, TILE_SIZE.y / 2, 0)
+		var center = (Vector3(grid) + Vector3(0.5, 1, 0.5)) * TILE_SIZE
 		print(center)
 		move_to_tile(center)
+
 
 func move_to_tile(pos: Vector3):
 	global_position = pos  
